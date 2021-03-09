@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="inside.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="inside.js"></script>
+    </head>
+    <body>
+        <!-- https://www.youtube.com/watch?v=FCFNoTqqqb8 -->
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <div class="container">
+                    <div class="image-container">
+                        <h2 class="text text-dark">
+                            <span class="parallax-title">
+                                the beautiful sky 
+                            </span>
+                        </h2>
+                    </div>
+
+                    <h2 class="text">
+                        <span class="parallax-title">
+                            the beautiful sky
+                        </span>
+                    </h2>
+                    <p class="click">
+                        <span class="click">
+                            click image
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            let atScroll = false;
+            let parallaxTitle = document.querySelectorAll(".parallax-title");
+
+            const scrollProgress = () => {
+                atScroll = true;
+            };
+
+            const raf = () => {
+                if (atScroll) {
+                    parallaxTitle.forEach((element, index) => {
+                        element.style.transform = "translateX(" + window.scrollY / 8 + "%)";
+                    });
+                    atScroll = false;
+                }
+                requestAnimationFrame(raf);
+            };
+
+            requestAnimationFrame(raf);
+            window.addEventListener("scroll", scrollProgress);
+        </script>
+
+
+
+    <div class="flowerText">flowers</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <div class="flowers">flowers
+            <img src="../pictures/pinkFlowers.png" class="pinkFlowers" width="400" height="600">
+            <img src="../pictures/shop.jpg" class="shop" width="400" height="600">
+            <img src="../pictures/pinkBunch.png" class="pinkBunch" width="400" height="600">
+        </div>
+
+
+    <div class="spotifyText">music</div> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <div class="musicCircle"></div>
+        <div class="musicStem"></div>
+        <div class="musicCircle2"></div>
+        <div class="musicStem2"></div>
+        <div class="spotify"><center><iframe src="https://open.spotify.com/embed/playlist/1D3MCmkp70nMt9y3dHTPVv" width="550" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></center></div>
+
+    
+
+    </body>
+</html>

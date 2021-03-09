@@ -1,0 +1,87 @@
+/* mainpage */
+.title{
+    text-align: center;
+    padding:20px 30px;
+    border-radius:50px;
+    color:black;
+}
+
+.title p {
+    font-family:Tangerine;
+    font-size:40px;
+    margin:0px;
+    margin-top: 300px;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:typing 4s steps(30,end) forwards,
+                blink 3.6s;
+    }
+    @keyframes typing {
+    0% { width:0% }
+    100% { width:100% }
+    }
+    @keyframes blink {
+    0%,100% {
+        border-right:2px solid transparent;
+    }
+    50% {
+        border-right:2px solid #222;
+    }
+}
+
+
+
+/* https://www.youtube.com/watch?v=zPcvAwp71uA */
+*{
+    font-size: 10px;
+    letter-spacing: 4px;
+    /* background-color: white; */
+    font-family: cofley;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(168, 202, 141);
+}
+
+.enterButton{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.enter{
+    border: none;
+    border-radius: 1px;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid rgb(168, 202, 141);
+    position: relative;
+    z-index: 1;
+}
+
+.enter:hover{
+color: green;
+cursor: circle;
+}
+
+.enter:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content:"";
+    background-color: white;
+}
+
+.enter:hover:before{
+    transition: 0.5s all ease;
+    left:0;
+    right:0;
+    opacity: 1;
+    z-index: -1;
+}
